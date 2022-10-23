@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klept 👕  </title>
+    <!-- add icon link -->
+    <link rel="icon" href="./images/k-mobile-logo.jpg" type="image/x-icon">
+    <script src="./scrollreveal.min.js"></script>
+    
+
+</head>
+
+<link rel="stylesheet" href="./fontawesome/css/all.css">
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="defaults.css">
+<link rel="stylesheet" href="mobile.css">
+<body>
+    <!-- preloader starts here -->
+    <div id="preloader"></div>
+
+    <div class="backdrop" onclick="kaisen()"></div>
+
+    <header>
+        <nav class="nav-mobile" id="home">
+            <div class="hamburger" onclick="kaisen()">
+                <div class="menu"></div>
+            </div>
+            <div class="klepttxt"></div>
+            
+            <div class="mobile-link-holder">
+                <ul>
+                    <li><a href="#home"> Home</a></li>
+                    <li><a href="#aboutus"> About Us</a></li>
+                    <li><a href="#explorefoods"> Explore Foods</a></li>
+                    <li><a href="#faq"> FAQ</a></li>
+                </ul>
+                <a href="tel:+12347141699"><button class="btn">+1 (234) 714-1699</button></a>
+
+            </div>
+        </nav>
+
+        
+    </header>
+
+           
+        
+    <script src="main.js"></script>
+
+    <!-- preloader continues -->
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener ("load", function(){
+            loader.style.display = "none";
+        })
+    </script>
+
+    
+
+</body>
+</html>
