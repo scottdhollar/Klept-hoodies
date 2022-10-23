@@ -263,7 +263,7 @@ body {
 /* Header counter section ends here */
 .firstsection {
     background: #000;
-    border: 2px solid tomato;
+    /* border: 2px solid tomato; */
 }
 
 .kleptbg {
@@ -272,7 +272,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border: 2px solid gold;
+    /* border: 2px solid gold; */
 }
 
 /* .main-hoodie {
