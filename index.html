@@ -4,67 +4,203 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klept 👕  </title>
-    <!-- add icon link -->
-    <link rel="icon" href="./images/k-mobile-logo.jpg" type="image/x-icon">
-    <script src="./scrollreveal.min.js"></script>
-    
+    <title>Horiontal scroll bar</title>
+    <link rel="icon" href="./images/k-mobile-logo.jpg">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/961a3d6472.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: black;
+        }
 
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            padding: 30px;
+        }
+
+        .main-scroll-div{
+            width: 90%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid red;
+        }
+
+        .cover{
+            position: relative;
+            width: 80%;
+            height: 50%;
+            display: flex;
+            border: 2px solid yellow;
+            padding: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cover::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            z-index: 99;
+            height: 100%;
+            width: 150px;
+            background-image: linear-gradient(90deg, black, transparent);
+        }
+        
+        .cover::after {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 0;
+            z-index: 99;
+            height: 100%;
+            width: 150px;
+            background-image: linear-gradient(-90deg, black, transparent);
+        }
+
+
+        .scroll-images{
+            border: 2px solid tomato;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            overflow: auto;
+            position: relative;
+            scroll-behavior: smooth;
+            padding: 60px;
+        
+        }
+
+        .child{
+            min-width: 1200px;
+            height: 100%;
+            margin: 1px 20px;
+            cursor: pointer;
+            border: 2px solid white;
+            overflow: hidden;
+            border-radius: 100px;
+            /* transition: all 2s ease-in-out; */
+
+        }
+
+        
+        .scroll-images::-webkit-scrollbar {
+            -webkit-appearance: none;
+        }
+
+        .child-img{
+            width: 100%;
+            height: 100%;
+            /* transition: all 4s ease-in-out; */
+            /* empty-cells: inherit; */
+        }
+        
+        
+        .iconl{
+            color: rgb(250, 232, 232);
+            background-color: black;
+            font-size: 100px;
+            outline: none;
+            border: none;
+            padding: 0px 20px;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: opacity;
+            transition-duration: 0.5s;
+            position: relative;
+        }
+        
+        .iconl:hover{
+            position: relative;
+            opacity: 0.9;
+            animation: bouncel;
+            animation-timing-function: ease-in-out;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+            animation-direction: alternate;
+        }
+
+        @keyframes bouncel{
+            0% {right: 0;}
+            100% {right: 20px;}
+        }
+        
+        .iconr{
+            color: rgb(250, 232, 232);
+            background-color: black;
+            font-size: 100px;
+            outline: none;
+            border: none;
+            padding: 0px 20px;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: opacity;
+            transition-duration: 0.5s;
+            position: relative;
+        }
+        
+        .iconr:hover{
+            position: relative;
+            opacity: 0.9;
+            animation: bouncer;
+            animation-timing-function: ease-in-out;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+            animation-direction: alternate;
+        }
+
+        @keyframes bouncer{
+            0% {left: 0;}
+            100% {left: 20px;}
+        }
+    </style>
 </head>
-
-<link rel="stylesheet" href="./fontawesome/css/all.css">
-<link rel="stylesheet" href="main.css">
-<link rel="stylesheet" href="defaults.css">
-<link rel="stylesheet" href="mobile.css">
 <body>
-    <!-- preloader starts here -->
-    <div id="preloader"></div>
-
-    <div class="backdrop" onclick="kaisen()"></div>
-
-    <header>
-        <nav class="nav-mobile" id="home">
-            <div class="hamburger" onclick="kaisen()">
-                <div class="menu"></div>
-            </div>
-            <div class="klepttxt"></div>
-            
-            <div class="mobile-link-holder">
-                <ul>
-                    <li><a href="#home"> Home</a></li>
-                    <li><a href="#aboutus"> About Us</a></li>
-                    <li><a href="#explorefoods"> Explore Foods</a></li>
-                    <li><a href="#faq"> FAQ</a></li>
-                </ul>
-                <a href="tel:+12347141699"><button class="btn">+1 (234) 714-1699</button></a>
-
-            </div>
-        </nav>
-    
-
-        
-    </header>
-
-    <section class="firstsection">
-        <div class="kleptbg">
-            <!-- <div class="main-hoodie"></div> -->
-            <h1>KLEPT</h1>
-            <h2>hoodies</h2>
+    <div class="main-scroll-div">
+        <div>
+            <button class="iconl" onclick="scrolll()"><i class="fa-solid fa-chevron-left"></i></button>
         </div>
-    </section>       
-        
-    <script src="main.js"></script>
+        <div class="cover">
+            <div class="scroll-images">
+                <div class="child"><img class="child-img" src="./images/an3.gif" alt="an3"></div>
+                <div class="child"><img class="child-img" src="./images/an1.jpg" alt="an1"></div>
+                <div class="child"><img class="child-img" src="./images/an2.jpg" alt="an2"></div>
+                <div class="child"><img class="child-img" src="./images/an4.gif" alt="an4"></div>
+                <div class="child"><img class="child-img" src="./images/an5.jpg" alt="an5"></div>
+                <div class="child"><img class="child-img" src="./images/an6.jpg" alt="an6"></img>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="iconr" onclick="scrollr()"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+    </body>
 
-    <!-- preloader continues -->
     <script>
-        var loader = document.getElementById("preloader");
-
-        window.addEventListener ("load", function(){
-            loader.style.display = "none";
-        })
+        function scrolll(){
+            var left = document.querySelector(".scroll-images");
+            left.scrollBy(-350,0)
+        }
+        
+        function scrollr(){
+            var right = document.querySelector(".scroll-images");
+            right.scrollBy(350,0)
+        }
     </script>
-
-    
-
-</body>
 </html>
